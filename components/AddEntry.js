@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import {
   View,
-  ScrollView,
   Text,
   TouchableOpacity,
   Platform,
@@ -136,7 +135,7 @@ class AddEntry extends Component {
     }
 
     return (
-      <ScrollView style={styles.container}>
+      <View style={styles.container}>
         <DateHeader date={new Date().toLocaleDateString()} />
         {Object.keys(metaInfo).map(activity => {
           const { getIcon, type, ...rest } = metaInfo[activity]
@@ -163,7 +162,7 @@ class AddEntry extends Component {
           )
         })}
         <SubmitBtn onPress={this.submit} />
-      </ScrollView>
+      </View>
     )
   }
 }
