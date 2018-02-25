@@ -1,11 +1,23 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, TouchableOpacity } from 'react-native'
+import { FontAwesome, Entypo } from '@expo/vector-icons'
 
 const UdaciSteppers = props => {
-  const { value } = props
+  const { value, max, unit, step, onIncrement, onDecrement } = props
   return (
     <View>
-      <Text>Steppers</Text>
+      <View>
+        <TouchableOpacity onPress={onDecrement}>
+          <FontAwesome name="minus" color="black" size={30} />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={onIncrement}>
+          <FontAwesome name="plus" color="black" size={30} />
+        </TouchableOpacity>
+      </View>
+      <View>
+        <Text>{value}</Text>
+        <Text>{unit}</Text>
+      </View>
     </View>
   )
 }

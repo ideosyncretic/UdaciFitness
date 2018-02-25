@@ -48,7 +48,7 @@ export default class AddEntry extends Component {
 
   slide = (activity, value) => {
     this.setState(() => ({
-      [metric]: value
+      [activity]: value
     }))
   }
 
@@ -96,6 +96,7 @@ export default class AddEntry extends Component {
                   value={value}
                   onIncrement={() => this.increment(activity)}
                   onDecrement={() => this.decrement(activity)}
+                  {...rest}
                 />
               )}
             </View>
