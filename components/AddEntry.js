@@ -6,6 +6,7 @@ import UdaciSlider from './UdaciSlider'
 import UdaciSteppers from './UdaciSteppers'
 import DateHeader from './DateHeader'
 import TextButton from './TextButton'
+import { submitEntry, removeEntry } from '../utils/api'
 
 const SubmitBtn = ({ onPress }) => {
   return (
@@ -70,7 +71,7 @@ export default class AddEntry extends Component {
 
     // TODO navigate to home
 
-    // TODO save to "database"
+    submitEntry({ key, entry })
 
     // TODO clear local notification
   }
@@ -83,6 +84,7 @@ export default class AddEntry extends Component {
     // TODO navigate to home
 
     // TODO save to "database"
+    removeEntry(key)
   }
 
   render() {
