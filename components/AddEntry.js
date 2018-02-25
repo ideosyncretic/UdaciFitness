@@ -3,6 +3,7 @@ import { View, Text } from 'react-native'
 import { getActivityMetaInfo } from '../utils/helpers'
 import UdaciSlider from './UdaciSlider'
 import UdaciSteppers from './UdaciSteppers'
+import DateHeader from './DateHeader'
 
 export default class AddEntry extends Component {
   state = {
@@ -47,6 +48,7 @@ export default class AddEntry extends Component {
     const metaInfo = getActivityMetaInfo()
     return (
       <View>
+        <DateHeader date={new Date().toLocaleDateString()} />
         {Object.keys(metaInfo).map(activity => {
           const { getIcon, type, ...rest } = metaInfo[activity]
           const value = this.state[activity]
