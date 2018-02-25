@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
+import { Ionicons } from '@expo/vector-icons'
 import { getActivityMetaInfo, timeToString } from '../utils/helpers'
 import UdaciSlider from './UdaciSlider'
 import UdaciSteppers from './UdaciSteppers'
 import DateHeader from './DateHeader'
+import TextButton from './TextButton'
 
 const SubmitBtn = ({ onPress }) => {
   return (
@@ -73,8 +75,29 @@ export default class AddEntry extends Component {
     // TODO clear local notification
   }
 
+  reset = () => {
+    const key = timeToString()
+
+    // TODO update Redux
+
+    // TODO navigate to home
+
+    // TODO save to "database"
+  }
+
   render() {
     const metaInfo = getActivityMetaInfo()
+
+    if (this.props.alreadyLogged) {
+      return (
+        <View>
+          <Ionicons name="ios-happy-outline" size={100} />
+          <Text>You already logged your information for today</Text>
+          <TextButton onPress={this.reset}>Reset</TextButton>
+        </View>
+      )
+    }
+
     return (
       <View>
         <DateHeader date={new Date().toLocaleDateString()} />
