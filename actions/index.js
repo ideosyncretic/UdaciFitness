@@ -8,7 +8,7 @@ export const receiveEntries = entries => {
   }
 }
 
-export const addEntries = entry => {
+export const addEntry = entry => {
   return {
     type: ADD_ENTRIES,
     entry
