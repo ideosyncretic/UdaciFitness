@@ -10,13 +10,14 @@ import History from './components/History'
 const store = createStore(reducer)
 
 export default class App extends React.Component {
-  render() {
-    return (
-      <Provider store={store}>
-        <View style={{ flex: 1 }}>
-          <History />
-        </View>
-      </Provider>
-    )
-  }
+	render() {
+		return (
+			<Provider store={store}>
+				<View style={{ flex: 1 }}>
+					<View style={{ height: 20 }} />
+					<History />
+				</View>
+			</Provider>
+		)
+	}
 }
