@@ -39,14 +39,18 @@ class History extends Component {
 	}
 
 	renderItem = ({ today, ...prevDays }, formattedDate, key) => (
-		<View style={styles.item} key={key}>
+		<View style={styles.item}>
 			{today ? (
 				<View>
 					<DateHeader date={formattedDate} />
 					<Text style={styles.noDataText}>{today}</Text>
 				</View>
 			) : (
-				<TouchableOpacity onPress={() => {}}>
+				<TouchableOpacity
+					onPress={() =>
+						this.props.navigation.navigate('EntryDetail', { entryId: key })
+					}
+				>
 					<ActivityCard activities={prevDays} date={formattedDate} />
 				</TouchableOpacity>
 			)}
