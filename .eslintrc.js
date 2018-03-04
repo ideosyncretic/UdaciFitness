@@ -3,6 +3,7 @@ module.exports = {
 		es6: true,
 		node: true,
 	},
+	plugins: ['eslint-plugin-react'],
 	extends: 'eslint:recommended',
 	parser: 'babel-eslint',
 	parserOptions: {
@@ -14,7 +15,6 @@ module.exports = {
 		allowImportExportEverywhere: false,
 		codeFrame: false,
 	},
-	plugins: ['eslint-plugin-react'],
 	rules: {
 		indent: ['error', 'tab'],
 		'linebreak-style': ['error', 'unix'],
