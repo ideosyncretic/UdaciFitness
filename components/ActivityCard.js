@@ -7,7 +7,7 @@ import { gray } from '../utils/colors'
 const ActivityCard = ({ date, activities }) => {
 	return (
 		<View>
-			{date && <DateHeader data={date} />}
+			{date && <DateHeader date={date} />}
 			{Object.keys(activities).map(activity => {
 				const {
 					getIcon,
